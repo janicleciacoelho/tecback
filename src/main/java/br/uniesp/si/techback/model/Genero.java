@@ -1,16 +1,22 @@
 package br.uniesp.si.techback.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-
+@Entity
+@Table(name = "genero")
 public class Genero {
-    private String genero;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 50, unique = true)
+    private String nome;
 }
+

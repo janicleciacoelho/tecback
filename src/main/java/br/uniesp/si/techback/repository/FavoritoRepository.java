@@ -1,4 +1,9 @@
 package br.uniesp.si.techback.repository;
 
-public interface FavoritoRepository {
+import br.uniesp.si.techback.model.Favorito;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface FavoritoRepository extends JpaRepository<Favorito, Long> {
 }
